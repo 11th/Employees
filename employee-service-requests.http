@@ -1,6 +1,21 @@
 ### Get all employees
 GET http://localhost:8080/employees
 
+### Get employees with high-salary
+GET http://localhost:8080/employees/high-salary
+
+### Get employee with max salary
+GET http://localhost:8080/employee/salary/max
+
+### Get employee with min salary
+GET http://localhost:8080/employee/salary/min
+
+### Get salary sum
+GET http://localhost:8080/employees/salary/sum
+
+### Get salary average
+GET http://localhost:8080/employees/salary/average
+
 ### Add employee 1
 POST http://localhost:8080/employee
 Content-Type: application/json

@@ -23,6 +23,31 @@ public class EmployeeController {
         return employeeService.getAllEmployees();
     }
 
+    @GetMapping("/employees/salary/sum")
+    public int getSalarySum(){
+        return employeeService.getSalarySum();
+    }
+
+    @GetMapping("/employees/salary/average")
+    public int getSalaryAverage(){
+        return employeeService.getSalaryAverage();
+    }
+
+    @GetMapping("/employees/high-salary")
+    public Collection<Employee> getEmployeesWithHighSalary(){
+        return employeeService.getEmployeesWithHighSalary();
+    }
+
+    @GetMapping("/employee/salary/max")
+    public Employee getEmployeeWithMaxSalary(){
+        return employeeService.getEmployeeWithMaxSalary();
+    }
+
+    @GetMapping("/employee/salary/min")
+    public Employee getEmployeeWithMinSalary(){
+        return employeeService.getEmployeeWithMinSalary();
+    }
+
     @PostMapping("/employee")
     public Employee addEmployee(@RequestBody EmployeeRequest employeeRequest){
         return employeeService.addEmployee(employeeRequest);

@@ -1,0 +1,14 @@
+### Get all employees of department
+GET http://localhost:8080/department/1/employees
+
+### Get summ salary of department
+GET http://localhost:8080/department/1/salary/sum
+
+### Return max salary of department
+GET http://localhost:8080/department/1/salary/max
+
+### Return min salary of department
+GET http://localhost:8080/department/1/salary/min
+
+### Get grouped employees
+GET http://localhost:8080/department/employees

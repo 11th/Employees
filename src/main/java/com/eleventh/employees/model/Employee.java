@@ -1,14 +1,16 @@
 package com.eleventh.employees.model;
 
+import java.util.Objects;
+
 public class Employee {
     private static int nextId;
     private final int id;
     private final String firstName;
     private final String lastName;
-    private final String department;
+    private final int department;
     private final int salary;
 
-    public Employee(String firstName, String lastName, String department, int salary) {
+    public Employee(String firstName, String lastName, int department, int salary) {
         this.id = ++nextId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -28,7 +30,7 @@ public class Employee {
         return lastName;
     }
 
-    public String getDepartment() {
+    public int getDepartment() {
         return department;
     }
 

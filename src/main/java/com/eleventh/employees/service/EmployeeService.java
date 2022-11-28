@@ -1,5 +1,6 @@
 package com.eleventh.employees.service;
 
+import com.eleventh.employees.exception.NotFoundException;
 import com.eleventh.employees.model.Employee;
 import com.eleventh.employees.record.EmployeeRequest;
 import org.springframework.stereotype.Service;
@@ -9,15 +10,15 @@ import java.util.stream.Collectors;
 
 @Service
 public class EmployeeService {
-    private final Map<Integer, Employee> employees = new HashMap<>();
+    private final Map<Integer, Employee> employees = new LinkedHashMap<>();
 
     public Collection<Employee> getAllEmployees() {
         return employees.values();
     }
 
     public int getSalarySum() {
-        return employees.entrySet().stream()
-                .mapToInt(e -> e.getValue().getSalary())
+        return employees.values().stream()
+                .mapToInt(Employee::getSalary)
                 .sum();
     }
 
@@ -39,17 +40,21 @@ public class EmployeeService {
     }
 
     public Employee getEmployeeWithMaxSalary() {
-        return employees.entrySet().stream()
-                .map(e -> e.getValue())
-                .max(Comparator.comparing(e -> e.getSalary()))
-                .get();
+        var optEmployee = employees.values().stream()
+                .max(Comparator.comparing(Employee::getSalary));
+        if (optEmployee.isEmpty()){
+            throw new NotFoundException();
+        }
+        return optEmployee.get();
     }
 
     public Employee getEmployeeWithMinSalary() {
-        return employees.entrySet().stream()
-                .map(e -> e.getValue())
-                .min(Comparator.comparing(e -> e.getSalary()))
-                .get();
+        var optEmployee = employees.values().stream()
+                .min(Comparator.comparing(Employee::getSalary));
+        if (optEmployee.isEmpty()){
+            throw new NotFoundException();
+        }
+        return optEmployee.get();
     }
 
     public Employee addEmployee(EmployeeRequest employeeRequest) {

@@ -3,7 +3,7 @@ package com.eleventh.employees.record;
 public class EmployeeRequest {
     private String firstName;
     private String lastName;
-    private String department;
+    private int department;
     private int salary;
 
     public void setFirstName(String firstName) {
@@ -14,7 +14,7 @@ public class EmployeeRequest {
         this.lastName = lastName;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment(int department) {
         this.department = department;
     }
 
@@ -30,7 +30,7 @@ public class EmployeeRequest {
         return lastName;
     }
 
-    public String getDepartment() {
+    public int getDepartment() {
         return department;
     }
 

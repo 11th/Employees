@@ -1,3 +1,47 @@
+### Add employee 1
+POST http://localhost:8080/employee
+Content-Type: application/json
+
+{
+  "firstName": "Ivan",
+  "lastName": "Ivanov",
+  "department": 1,
+  "salary": 1111
+}
+
+### Add employee 2
+POST http://localhost:8080/employee
+Content-Type: application/json
+
+{
+  "firstName": "Petr",
+  "lastName": "Petrov",
+  "department": 1,
+  "salary": 2222
+}
+
+### Add employee 3
+POST http://localhost:8080/employee
+Content-Type: application/json
+
+{
+  "firstName": "Ivan",
+  "lastName": "Sidorov",
+  "department": 1,
+  "salary": 3333
+}
+
+### Add employee 4
+POST http://localhost:8080/employee
+Content-Type: application/json
+
+{
+  "firstName": "Hanna",
+  "lastName": "Sidorova",
+  "department": 2,
+  "salary": 5000
+}
+
 ### Get all employees
 GET http://localhost:8080/employees
 
@@ -15,36 +59,3 @@ GET http://localhost:8080/employees/salary/sum
 
 ### Get salary average
 GET http://localhost:8080/employees/salary/average
-
-### Add employee 1
-POST http://localhost:8080/employee
-Content-Type: application/json
-
-{
-  "firstName": "Ivan",
-  "lastName": "Ivanov",
-  "department": "department",
-  "salary": 1111
-}
-
-### Add employee 2
-POST http://localhost:8080/employee
-Content-Type: application/json
-
-{
-  "firstName": "Petr",
-  "lastName": "Petrov",
-  "department": "department",
-  "salary": 2222
-}
-
-### Add employee 3
-POST http://localhost:8080/employee
-Content-Type: application/json
-
-{
-  "firstName": "Ivan",
-  "lastName": "Sidorov",
-  "department": "department",
-  "salary": 3333
-}
